@@ -1,5 +1,7 @@
 package ex004;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Random;
 
 public class Program
@@ -14,6 +16,9 @@ public class Program
         String [] surnames = {"Маслов","Мавлетов","Петров","Лазарев","Степанов","Смирнов"};
 
         int randomsalary = random.nextInt(2000 - 200 + 1);
+        // Тут я решил заполнять массивы в случайном порядке Фрилансеров и Воркеров
+
+
         // Employees worker = new Worker(names[random.nextInt(names.length)], surnames[random.nextInt(surnames.length)], randomsalary);
         // Employees freelancer = new Freelancer(names[random.nextInt(names.length)],surnames[random.nextInt(surnames.length)],randomsalary);
 
@@ -34,6 +39,12 @@ public class Program
     public static void main(String[] args) {
         
        Employees [] employees = getWorkers(10);
+    // Можно было еще сделать так:
+    //    EmpComparator comparator = new EmpComparator(Sorttype.Descending);
+
+
+    // Здесь все понятно,изначально конструировал без age поэтом нет ее реализации но это не сложнее чем то что я сделал
+       Arrays.sort(employees,new EmpComparator(Sorttype.Descending));
 
        for(Employees employee : employees)
        {

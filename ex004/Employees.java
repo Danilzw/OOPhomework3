@@ -19,6 +19,9 @@ public class Employees {
         this.surName = surName;
     }
 
+    public double getSalary() {
+        return salary;
+    }
 
 
     public String toString()
